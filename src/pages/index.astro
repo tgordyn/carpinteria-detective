@@ -1,0 +1,855 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const servicios = [
+  {
+    num: '01',
+    titulo: 'Muebles a medida',
+    desc: 'Diseñamos y fabricamos cada pieza adaptada a tu espacio, estilo y necesidades. Desde un escritorio hasta un sistema de guardado completo.',
+  },
+  {
+    num: '02',
+    titulo: 'Cocinas y vanitorios',
+    desc: 'Proyectos de cocinas funcionales y elegantes, con materiales de primera calidad y terminaciones impecables.',
+  },
+  {
+    num: '03',
+    titulo: 'Revestimientos y placares',
+    desc: 'Frentes de placard, revestimientos de pared y soluciones de guardado que transforman cualquier ambiente.',
+  },
+  {
+    num: '04',
+    titulo: 'Proyectos comerciales',
+    desc: 'Equipamos locales, estudios y oficinas con propuestas que combinan estética, durabilidad y practicidad.',
+  },
+];
+
+const proyectos = [
+  { cat: 'Cocina',     titulo: 'Cocina integral — Palermo',           year: '2024', flickr: 'kitchen,wood',        lock: 20, wide: true  },
+  { cat: 'Placard',   titulo: 'Sistema de guardado — Belgrano',       year: '2024', flickr: 'wardrobe,interior',   lock: 21, wide: false },
+  { cat: 'Living',    titulo: 'Biblioteca a medida — Núñez',          year: '2024', flickr: 'bookshelf,wood',      lock: 22, wide: false },
+  { cat: 'Comercial', titulo: 'Bar / local gastronómico — San Telmo', year: '2023', flickr: 'bar,interior,wood',   lock: 23, wide: false },
+  { cat: 'Dormitorio',titulo: 'Cabecera y mesas de luz — Caballito',  year: '2023', flickr: 'bedroom,furniture',   lock: 24, wide: false },
+  { cat: 'Oficina',   titulo: 'Estudio / home office — Villa Urquiza',year: '2023', flickr: 'office,furniture',    lock: 25, wide: true  },
+];
+
+const testimonios = [
+  {
+    texto: 'Trabajar con Detective fue muy distinto a lo que esperaba. Desde la primera reunión entendieron lo que quería, propusieron ideas que no había pensado, y el resultado superó todo. La cocina quedó impecable.',
+    nombre: 'Valentina R.',
+    lugar: 'Palermo, CABA',
+  },
+  {
+    texto: 'Buscaba algo simple y funcional para mi home office. Me armaron una propuesta en dos días y en tres semanas estaba todo instalado. Precisión total, sin sorpresas en el presupuesto.',
+    nombre: 'Matías G.',
+    lugar: 'Villa Urquiza, CABA',
+  },
+];
+---
+
+<Layout>
+
+  <!-- ── NAV ─────────────────────────────────────────── -->
+  <header id="nav">
+    <div class="container nav-inner">
+      <a href="/" class="logo" aria-label="Carpintería Detective">
+        <span class="logo-main">Detective</span>
+        <span class="logo-sub">Carpintería</span>
+      </a>
+
+      <nav class="nav-links hide-sm" aria-label="Navegación principal">
+        <a href="#nosotros">Nosotros</a>
+        <a href="#servicios">Servicios</a>
+        <a href="#proyectos">Proyectos</a>
+        <a href="#consulta">Contacto</a>
+      </nav>
+
+      <a
+        href="https://wa.me/5491100000000?text=Hola%2C%20quiero%20hacer%20una%20consulta"
+        class="btn btn-dark hide-sm"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        WhatsApp
+      </a>
+
+      <button class="menu-btn" id="menuBtn" aria-label="Menú" aria-expanded="false">
+        <span></span><span></span>
+      </button>
+    </div>
+
+    <div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+      <a href="#nosotros" class="mobile-link">Nosotros</a>
+      <a href="#servicios" class="mobile-link">Servicios</a>
+      <a href="#proyectos" class="mobile-link">Proyectos</a>
+      <a href="#consulta" class="mobile-link">Contacto</a>
+      <a
+        href="https://wa.me/5491100000000"
+        class="btn btn-filled"
+        target="_blank"
+        rel="noopener noreferrer"
+        style="margin-top:1rem;align-self:flex-start;"
+      >WhatsApp →</a>
+    </div>
+  </header>
+
+  <!-- ── HERO ────────────────────────────────────────── -->
+  <section id="inicio" class="hero">
+    <div class="container hero-inner">
+      <div class="hero-content">
+        <span class="label">Carpintería a medida · Buenos Aires</span>
+        <h1>Cada espacio<br /><em>tiene una historia.</em><br />Nosotros<br />la construimos.</h1>
+        <p class="hero-sub">
+          Muebles, cocinas y proyectos de carpintería diseñados con precisión,
+          fabricados con materiales nobles, instalados con detalle.
+        </p>
+        <div class="hero-actions">
+          <a
+            href="https://wa.me/5491100000000?text=Hola%2C%20quiero%20consultar%20sobre%20un%20proyecto"
+            class="btn btn-whatsapp"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Consultar por WhatsApp →
+          </a>
+          <a href="#proyectos" class="btn btn-dark">Ver proyectos</a>
+        </div>
+      </div>
+
+      <div class="hero-img img-block">
+        <img src="https://loremflickr.com/800/1067/furniture,interior/all?lock=1" alt="Proyecto de carpintería" />
+      </div>
+    </div>
+
+    <a href="#nosotros" class="scroll-hint" aria-label="Siguiente sección">
+      <svg width="16" height="24" viewBox="0 0 16 24" fill="none" stroke="currentColor" stroke-width="1.5">
+        <line x1="8" y1="2" x2="8" y2="20"/>
+        <polyline points="3,15 8,20 13,15"/>
+      </svg>
+    </a>
+  </section>
+
+  <!-- ── NOSOTROS ─────────────────────────────────────── -->
+  <section id="nosotros" class="section">
+    <div class="container about-grid">
+      <div class="about-text">
+        <span class="label">Nosotros</span>
+        <h2>Tres socios,<br />un solo oficio.</h2>
+        <div class="divider"></div>
+        <p>
+          Somos Gonzalo, Lucas y Martín — tres carpinteros porteños que combinamos
+          formación técnica, ojo de diseño y pasión por el trabajo bien hecho.
+          Fundamos Detective porque creemos que la carpintería es una investigación:
+          cada proyecto requiere entender el espacio, al cliente y los materiales
+          antes de hacer el primer corte.
+        </p>
+        <p style="margin-top:1rem;">
+          Trabajamos en Buenos Aires y el Gran Buenos Aires, con taller propio,
+          materiales seleccionados y plazos reales. Sin intermediarios.
+          El que te atiende es el mismo que diseña y el mismo que instala.
+        </p>
+        <a href="#consulta" class="btn btn-dark" style="margin-top:2.5rem;">Hablemos de tu proyecto</a>
+      </div>
+
+      <div class="about-partners">
+        <div class="partner-card">
+          <div class="img-block partner-img">
+            <img src="https://loremflickr.com/600/800/craftsman,woodwork/all?lock=10" alt="Gonzalo" />
+          </div>
+          <div class="partner-info">
+            <strong>Gonzalo</strong>
+            <span>Diseño y producción</span>
+          </div>
+        </div>
+        <div class="partner-card">
+          <div class="img-block partner-img">
+            <img src="https://loremflickr.com/600/800/carpenter,workshop/all?lock=11" alt="Lucas" />
+          </div>
+          <div class="partner-info">
+            <strong>Lucas</strong>
+            <span>Obra e instalación</span>
+          </div>
+        </div>
+        <div class="partner-card">
+          <div class="img-block partner-img">
+            <img src="https://loremflickr.com/600/800/craftsman,tools/all?lock=12" alt="Martín" />
+          </div>
+          <div class="partner-info">
+            <strong>Martín</strong>
+            <span>Presupuestos y clientes</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── SERVICIOS ────────────────────────────────────── -->
+  <section id="servicios" class="section services-section">
+    <div class="container">
+      <div class="section-head">
+        <span class="label">Servicios</span>
+        <h2>Lo que hacemos</h2>
+      </div>
+      <div class="services-grid">
+        {servicios.map((s) => (
+          <div class="service-item">
+            <span class="service-num">{s.num}</span>
+            <h3>{s.titulo}</h3>
+            <div class="divider"></div>
+            <p>{s.desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ── PROYECTOS ────────────────────────────────────── -->
+  <section id="proyectos" class="section">
+    <div class="container">
+      <div class="section-head">
+        <span class="label">Proyectos realizados</span>
+        <h2>Nuestro trabajo</h2>
+      </div>
+      <div class="projects-grid">
+        {proyectos.map((p) => (
+          <article class="project-card" data-size={p.wide ? 'wide' : 'normal'}>
+            <div class="img-block project-img">
+              <img
+                src={`https://loremflickr.com/${p.wide ? '1200/675' : '800/600'}/${p.flickr}/all?lock=${p.lock}`}
+                alt={p.titulo}
+              />
+            </div>
+            <div class="project-info">
+              <span class="project-cat">{p.cat}</span>
+              <h4>{p.titulo}</h4>
+              <span class="project-year">{p.year}</span>
+            </div>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ── STATS ────────────────────────────────────────── -->
+  <section class="stats-section">
+    <div class="container stats-grid">
+      <div class="stat">
+        <span class="stat-num">+60</span>
+        <span class="stat-label">Proyectos realizados</span>
+      </div>
+      <div class="stat">
+        <span class="stat-num">3</span>
+        <span class="stat-label">Años de trayectoria</span>
+      </div>
+      <div class="stat">
+        <span class="stat-num">100%</span>
+        <span class="stat-label">Entrega a tiempo</span>
+      </div>
+      <div class="stat">
+        <span class="stat-num">CABA</span>
+        <span class="stat-label">y Gran Buenos Aires</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── TESTIMONIOS ──────────────────────────────────── -->
+  <section id="testimonios" class="section">
+    <div class="container">
+      <span class="label">Lo que dicen nuestros clientes</span>
+      <div class="testimonios-grid">
+        {testimonios.map((t) => (
+          <blockquote class="testimonio">
+            <span class="quote-mark">"</span>
+            <p>{t.texto}</p>
+            <footer>
+              <strong>{t.nombre}</strong>
+              <span>{t.lugar}</span>
+            </footer>
+          </blockquote>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ── CONSULTA ─────────────────────────────────────── -->
+  <section id="consulta" class="section consulta-section">
+    <div class="container consulta-grid">
+      <div class="consulta-info">
+        <span class="label">Contacto</span>
+        <h2>¿Tenés un proyecto en mente?</h2>
+        <div class="divider"></div>
+        <p>
+          Contanos qué tenés pensado y te respondemos en menos de 24 horas
+          con una orientación de presupuesto sin cargo.
+        </p>
+        <ul class="contact-list">
+          <li>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 01.1 1.17a2 2 0 011.99-2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 8.37a16 16 0 006.72 6.72l1.27-.38a2 2 0 012.11.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+            <a href="tel:+5491100000000">+54 9 11 0000-0000</a>
+          </li>
+          <li>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            <a href="mailto:hola@carpinteriadetective.com.ar">hola@carpinteriadetective.com.ar</a>
+          </li>
+          <li>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            <span>Buenos Aires, Argentina</span>
+          </li>
+          <li>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+            <a href="https://instagram.com/carpinteriadetective" target="_blank" rel="noopener noreferrer">@carpinteriadetective</a>
+          </li>
+        </ul>
+      </div>
+
+      <form
+        name="consulta"
+        method="POST"
+        data-netlify="true"
+        class="consulta-form"
+        netlify-honeypot="bot-field"
+      >
+        <input type="hidden" name="form-name" value="consulta" />
+        <p class="hidden" aria-hidden="true">
+          <input name="bot-field" tabindex="-1" autocomplete="off" />
+        </p>
+
+        <div class="form-row">
+          <div class="form-field">
+            <label for="nombre">Nombre *</label>
+            <input type="text" id="nombre" name="nombre" required placeholder="Tu nombre" />
+          </div>
+          <div class="form-field">
+            <label for="email">Email *</label>
+            <input type="email" id="email" name="email" required placeholder="tu@email.com" />
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-field">
+            <label for="telefono">Teléfono</label>
+            <input type="tel" id="telefono" name="telefono" placeholder="+54 9 11..." />
+          </div>
+          <div class="form-field">
+            <label for="tipo">Tipo de proyecto</label>
+            <select id="tipo" name="tipo">
+              <option value="">Seleccioná...</option>
+              <option>Mueble a medida</option>
+              <option>Cocina o baño</option>
+              <option>Placard / guardado</option>
+              <option>Proyecto comercial</option>
+              <option>Otro</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-field">
+          <label for="mensaje">Contanos tu idea *</label>
+          <textarea id="mensaje" name="mensaje" rows="5" required placeholder="Describí el espacio, el estilo que buscás, si tenés medidas..."></textarea>
+        </div>
+
+        <button type="submit" class="btn btn-filled" style="width:100%;justify-content:center;">
+          Enviar consulta →
+        </button>
+      </form>
+    </div>
+  </section>
+
+  <!-- ── FOOTER ───────────────────────────────────────── -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <span class="logo-main">Detective</span>
+        <span class="logo-sub">Carpintería</span>
+        <p style="margin-top:1rem;font-size:0.85rem;">Muebles a medida en Buenos Aires.<br />Diseño, precisión, detalle.</p>
+      </div>
+
+      <nav class="footer-nav" aria-label="Navegación pie de página">
+        <a href="#nosotros">Nosotros</a>
+        <a href="#servicios">Servicios</a>
+        <a href="#proyectos">Proyectos</a>
+        <a href="#consulta">Contacto</a>
+      </nav>
+
+      <div class="footer-contact">
+        <a href="tel:+5491100000000">+54 9 11 0000-0000</a>
+        <a href="mailto:hola@carpinteriadetective.com.ar">hola@carpinteriadetective.com.ar</a>
+        <a href="https://instagram.com/carpinteriadetective" target="_blank" rel="noopener noreferrer">Instagram</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="container">
+        <span>© 2025 Carpintería Detective. Buenos Aires, Argentina.</span>
+      </div>
+    </div>
+  </footer>
+
+</Layout>
+
+<style>
+  /* ── NAV ──────────────────────────────────────────── */
+  #nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    background: var(--bg);
+    border-bottom: 1px solid transparent;
+    transition: border-color 0.3s ease, background 0.3s ease;
+  }
+  #nav.scrolled {
+    border-bottom-color: var(--border);
+    background: rgba(246, 243, 238, 0.96);
+    backdrop-filter: blur(8px);
+  }
+  .nav-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 72px;
+    gap: 2rem;
+  }
+  .logo {
+    display: flex;
+    flex-direction: column;
+    line-height: 1;
+    gap: 1px;
+  }
+  .logo-main {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.5rem;
+    font-weight: 400;
+    letter-spacing: -0.03em;
+    color: var(--dark);
+  }
+  .logo-sub {
+    font-size: 0.55rem;
+    font-weight: 500;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--accent);
+  }
+  .nav-links {
+    display: flex;
+    gap: 2.5rem;
+    font-size: 0.75rem;
+    font-weight: 400;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+  .nav-links a { color: var(--muted); transition: color 0.2s; }
+  .nav-links a:hover { color: var(--dark); }
+
+  .menu-btn {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 4px;
+  }
+  .menu-btn span {
+    display: block;
+    width: 22px;
+    height: 1px;
+    background: var(--dark);
+    transition: all 0.2s;
+  }
+  @media (max-width: 640px) {
+    .menu-btn { display: flex; }
+  }
+  .mobile-menu {
+    display: none;
+    flex-direction: column;
+    padding: 1.5rem clamp(1.5rem, 5vw, 3.5rem) 2rem;
+    border-top: 1px solid var(--border);
+    background: var(--bg);
+  }
+  .mobile-menu.open { display: flex; }
+  .mobile-link {
+    padding: 0.85rem 0;
+    font-size: 0.8rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--muted);
+    border-bottom: 1px solid var(--border);
+  }
+
+  /* ── HERO ─────────────────────────────────────────── */
+  .hero {
+    min-height: 100svh;
+    padding-top: 72px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+  }
+  .hero-inner {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: clamp(3rem, 6vw, 6rem);
+    align-items: center;
+    padding-top: clamp(3rem, 8vw, 5rem);
+    padding-bottom: clamp(3rem, 8vw, 5rem);
+  }
+  .hero-content h1 { margin-bottom: 1.5rem; }
+  .hero-content em { font-style: italic; color: var(--accent); }
+  .hero-sub { max-width: 38ch; margin-top: 0.5rem; }
+  .hero-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-top: 2.5rem;
+  }
+  .hero-img {
+    aspect-ratio: 3/4;
+    border-radius: 1px;
+  }
+  .scroll-hint {
+    position: absolute;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    color: var(--muted);
+    animation: bounce 2s infinite;
+  }
+  @keyframes bounce {
+    0%, 100% { transform: translateX(-50%) translateY(0); }
+    50% { transform: translateX(-50%) translateY(6px); }
+  }
+  @media (max-width: 768px) {
+    .hero-inner {
+      grid-template-columns: 1fr;
+    }
+    .hero-img { aspect-ratio: 16/9; order: -1; }
+    .scroll-hint { display: none; }
+  }
+
+  /* ── NOSOTROS ─────────────────────────────────────── */
+  .about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: clamp(3rem, 8vw, 8rem);
+    align-items: start;
+  }
+  .about-text h2 { margin-bottom: 0; }
+  .about-partners {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+  }
+  .partner-card { display: flex; flex-direction: column; gap: 0.75rem; }
+  .partner-img { aspect-ratio: 3/4; border-radius: 1px; }
+  .partner-info {
+    display: flex;
+    flex-direction: column;
+    gap: 0.15rem;
+  }
+  .partner-info strong {
+    font-size: 0.85rem;
+    font-weight: 500;
+  }
+  .partner-info span {
+    font-size: 0.7rem;
+    letter-spacing: 0.05em;
+    color: var(--muted);
+  }
+  @media (max-width: 900px) {
+    .about-grid { grid-template-columns: 1fr; }
+  }
+
+  /* ── SERVICIOS ────────────────────────────────────── */
+  .services-section { background: var(--white); }
+  .section-head { margin-bottom: clamp(2.5rem, 5vw, 4rem); }
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1px;
+    background: var(--border);
+    border: 1px solid var(--border);
+  }
+  .service-item {
+    background: var(--white);
+    padding: clamp(1.5rem, 3vw, 2.5rem);
+    display: flex;
+    flex-direction: column;
+  }
+  .service-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.5rem;
+    color: var(--accent-light);
+    line-height: 1;
+    margin-bottom: 1rem;
+  }
+  .service-item h3 { font-size: 1.25rem; margin-bottom: 0; }
+  .service-item .divider { margin: 1rem 0; }
+  @media (max-width: 900px) {
+    .services-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+  @media (max-width: 540px) {
+    .services-grid { grid-template-columns: 1fr; }
+  }
+
+  /* ── PROYECTOS ────────────────────────────────────── */
+  .projects-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    margin-top: clamp(2rem, 4vw, 3rem);
+  }
+  .project-card[data-size="wide"] { grid-column: span 2; }
+  .project-img { aspect-ratio: 4/3; border-radius: 1px; }
+  .project-card[data-size="wide"] .project-img { aspect-ratio: 16/9; }
+  .project-info {
+    display: flex;
+    align-items: baseline;
+    gap: 0.75rem;
+    padding: 0.875rem 0 0;
+  }
+  .project-cat {
+    font-size: 0.6rem;
+    font-weight: 500;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--accent);
+    white-space: nowrap;
+  }
+  .project-info h4 {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 400;
+    flex: 1;
+  }
+  .project-year {
+    font-size: 0.75rem;
+    color: var(--muted);
+    white-space: nowrap;
+  }
+  @media (max-width: 768px) {
+    .projects-grid { grid-template-columns: 1fr 1fr; }
+    .project-card[data-size="wide"] { grid-column: span 1; }
+    .project-card[data-size="wide"] .project-img { aspect-ratio: 4/3; }
+  }
+  @media (max-width: 480px) {
+    .projects-grid { grid-template-columns: 1fr; }
+  }
+
+  /* ── STATS ────────────────────────────────────────── */
+  .stats-section {
+    background: var(--dark);
+    padding: clamp(3rem, 7vw, 5rem) 0;
+  }
+  .stats-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1px;
+    background: rgba(255,255,255,0.1);
+    border: 1px solid rgba(255,255,255,0.1);
+  }
+  .stat {
+    background: var(--dark);
+    padding: clamp(1.5rem, 3vw, 2.5rem);
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  .stat-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2.5rem, 5vw, 3.5rem);
+    color: var(--accent);
+    line-height: 1;
+  }
+  .stat-label {
+    font-size: 0.7rem;
+    font-weight: 400;
+    letter-spacing: 0.08em;
+    color: rgba(255,255,255,0.5);
+    text-transform: uppercase;
+  }
+  @media (max-width: 640px) {
+    .stats-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+
+  /* ── TESTIMONIOS ──────────────────────────────────── */
+  .testimonios-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: clamp(1.5rem, 4vw, 3rem);
+    margin-top: clamp(2rem, 4vw, 3rem);
+  }
+  .testimonio {
+    background: var(--white);
+    border: 1px solid var(--border);
+    padding: clamp(1.5rem, 3vw, 2.5rem);
+    position: relative;
+  }
+  .quote-mark {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 5rem;
+    color: var(--accent-light);
+    line-height: 0.8;
+    display: block;
+    margin-bottom: 0.5rem;
+  }
+  .testimonio p { font-style: italic; font-size: 0.9375rem; }
+  .testimonio footer {
+    margin-top: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.15rem;
+  }
+  .testimonio footer strong { font-size: 0.8rem; font-weight: 500; color: var(--dark); }
+  .testimonio footer span { font-size: 0.7rem; color: var(--muted); letter-spacing: 0.05em; }
+  @media (max-width: 640px) {
+    .testimonios-grid { grid-template-columns: 1fr; }
+  }
+
+  /* ── CONSULTA ─────────────────────────────────────── */
+  .consulta-section { background: var(--white); }
+  .consulta-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    gap: clamp(3rem, 8vw, 8rem);
+    align-items: start;
+  }
+  .consulta-info h2 { margin-bottom: 0; }
+  .contact-list {
+    list-style: none;
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  .contact-list li {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    font-size: 0.85rem;
+    color: var(--muted);
+  }
+  .contact-list svg { flex-shrink: 0; color: var(--accent); }
+  .contact-list a:hover { color: var(--dark); }
+
+  .consulta-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+  }
+  .form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.25rem;
+  }
+  .form-field {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  .form-field label {
+    font-size: 0.7rem;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--dark);
+  }
+  .form-field input,
+  .form-field select,
+  .form-field textarea {
+    background: var(--bg);
+    border: 1px solid var(--border);
+    padding: 0.75rem 1rem;
+    font-size: 0.875rem;
+    color: var(--dark);
+    outline: none;
+    transition: border-color 0.2s;
+    border-radius: 0;
+    appearance: none;
+    -webkit-appearance: none;
+    resize: vertical;
+  }
+  .form-field input::placeholder,
+  .form-field textarea::placeholder {
+    color: var(--border);
+  }
+  .form-field input:focus,
+  .form-field select:focus,
+  .form-field textarea:focus {
+    border-color: var(--accent);
+  }
+  .hidden { display: none; }
+  @media (max-width: 900px) {
+    .consulta-grid { grid-template-columns: 1fr; }
+  }
+  @media (max-width: 540px) {
+    .form-row { grid-template-columns: 1fr; }
+  }
+
+  /* ── FOOTER ───────────────────────────────────────── */
+  .footer {
+    background: var(--dark);
+    color: rgba(255,255,255,0.55);
+    padding-top: clamp(3rem, 6vw, 5rem);
+  }
+  .footer-inner {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr;
+    gap: clamp(2rem, 5vw, 5rem);
+    padding-bottom: clamp(3rem, 6vw, 5rem);
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+  }
+  .footer-brand .logo-main { color: white; font-size: 2rem; }
+  .footer-brand .logo-sub { color: var(--accent); }
+  .footer-brand p { color: rgba(255,255,255,0.4); }
+  .footer-nav, .footer-contact {
+    display: flex;
+    flex-direction: column;
+    gap: 0.875rem;
+    padding-top: 0.5rem;
+  }
+  .footer-nav a, .footer-contact a, .footer-contact span {
+    font-size: 0.8rem;
+    color: rgba(255,255,255,0.45);
+    transition: color 0.2s;
+    letter-spacing: 0.04em;
+  }
+  .footer-nav a:hover, .footer-contact a:hover { color: white; }
+  .footer-bottom {
+    padding: 1.25rem 0;
+  }
+  .footer-bottom span {
+    font-size: 0.7rem;
+    color: rgba(255,255,255,0.25);
+    letter-spacing: 0.06em;
+  }
+  @media (max-width: 640px) {
+    .footer-inner { grid-template-columns: 1fr 1fr; }
+    .footer-brand { grid-column: 1 / -1; }
+  }
+</style>
+
+<script>
+  // Sticky nav scroll effect
+  const nav = document.getElementById('nav');
+  const onScroll = () => {
+    nav?.classList.toggle('scrolled', window.scrollY > 20);
+  };
+  window.addEventListener('scroll', onScroll, { passive: true });
+
+  // Mobile menu toggle
+  const menuBtn = document.getElementById('menuBtn');
+  const mobileMenu = document.getElementById('mobileMenu');
+  menuBtn?.addEventListener('click', () => {
+    const open = mobileMenu?.classList.toggle('open');
+    menuBtn.setAttribute('aria-expanded', String(open));
+    mobileMenu?.setAttribute('aria-hidden', String(!open));
+  });
+  mobileMenu?.querySelectorAll('.mobile-link').forEach(link => {
+    link.addEventListener('click', () => {
+      mobileMenu.classList.remove('open');
+      menuBtn?.setAttribute('aria-expanded', 'false');
+      mobileMenu.setAttribute('aria-hidden', 'true');
+    });
+  });
+</script>
