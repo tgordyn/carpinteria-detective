@@ -371,12 +371,13 @@ const waLink = (text: string) =>
   .logo-text {
     display: flex;
     flex-direction: column;
-    gap: 1px;
+    gap: 6px;
   }
   .logo-main {
     font-family: 'Sacramento', cursive;
-    font-size: 2rem;
+    font-size: 2.2rem;
     font-weight: 400;
+    line-height: 1;
     color: var(--dark);
   }
   .logo-sub {
@@ -677,10 +678,10 @@ const waLink = (text: string) =>
   .consulta-info h2 { margin-bottom: 0; }
   .contact-list {
     list-style: none;
-    margin-top: 2rem;
+    margin-top: 2.5rem;
     display: flex;
     flex-direction: column;
-    gap: 1rem;
+    gap: 1.25rem;
   }
   .contact-list li {
     display: flex;
@@ -688,8 +689,9 @@ const waLink = (text: string) =>
     gap: 0.75rem;
     font-size: 0.85rem;
     color: var(--muted);
+    overflow: visible;
   }
-  .contact-list svg { flex-shrink: 0; color: var(--accent); }
+  .contact-list svg { flex-shrink: 0; color: var(--accent); overflow: visible; }
   .contact-list a:hover { color: var(--dark); }
 
   .consulta-form {
@@ -759,8 +761,8 @@ const waLink = (text: string) =>
     padding-bottom: clamp(3rem, 6vw, 5rem);
     border-bottom: 1px solid rgba(255,255,255,0.08);
   }
-  .footer-brand .logo-main { color: white; font-size: 2rem; display: block; }
-  .footer-brand .logo-sub { color: var(--accent); display: block; }
+  .footer-brand .logo-main { color: white; font-size: 2rem; display: block; line-height: 1; }
+  .footer-brand .logo-sub { color: var(--accent); display: block; margin-top: 0.6rem; }
   .footer-brand p { color: rgba(255,255,255,0.4); }
   .footer-nav, .footer-contact {
     display: flex;
