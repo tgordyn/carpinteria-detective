@@ -56,7 +56,11 @@ collections:
               - { label: "Categoría (ej: Cocina)", name: "cat", widget: "string" }
               - { label: "Título", name: "titulo", widget: "string" }
               - { label: "Año", name: "year", widget: "string" }
-              - { label: "Foto", name: "foto", widget: "image" }
+              - { label: "Descripción", name: "descripcion", widget: "text" }
+              - label: "Fotos / Videos"
+                name: "fotos"
+                widget: "list"
+                field: { label: "Foto o URL de video", name: "src", widget: "image" }
               - { label: "Ancho completo (ocupa 2 columnas)", name: "wide", widget: "boolean", default: false }
 
       - name: "testimonios"

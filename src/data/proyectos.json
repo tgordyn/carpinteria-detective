@@ -4,50 +4,83 @@
       "cat": "Cocina",
       "titulo": "Cocina integral — Palermo",
       "year": "2024",
-      "foto": "https://loremflickr.com/1200/675/kitchen,wood/all?lock=20",
+      "descripcion": "Proyecto de cocina integral con mesada de cuarzo, frentes lacados y sistema de guardado optimizado. Diseñado para un departamento de 80m² en Palermo.",
+      "fotos": [
+        "https://loremflickr.com/1200/675/kitchen,wood/all?lock=20",
+        "https://loremflickr.com/1200/675/kitchen,interior/all?lock=201",
+        "https://loremflickr.com/1200/675/kitchen,modern/all?lock=202"
+      ],
       "wide": true
     },
     {
       "cat": "Placard",
       "titulo": "Sistema de guardado — Belgrano",
       "year": "2024",
-      "foto": "https://loremflickr.com/800/600/wardrobe,interior/all?lock=21",
+      "descripcion": "Sistema de placares a medida con frentes corredizos en laca mate y organizadores interiores personalizados para dormitorio principal.",
+      "fotos": [
+        "https://loremflickr.com/800/600/wardrobe,interior/all?lock=21",
+        "https://loremflickr.com/800/600/closet,wood/all?lock=211",
+        "https://loremflickr.com/800/600/wardrobe,modern/all?lock=212"
+      ],
       "wide": false
     },
     {
       "cat": "Living",
       "titulo": "Biblioteca a medida — Núñez",
       "year": "2024",
-      "foto": "https://loremflickr.com/800/600/bookshelf,wood/all?lock=22",
+      "descripcion": "Biblioteca de piso a techo en madera de roble con iluminación integrada y escritorio incorporado. Proyecto para estudio en living.",
+      "fotos": [
+        "https://loremflickr.com/800/600/bookshelf,wood/all?lock=22",
+        "https://loremflickr.com/800/600/library,interior/all?lock=221",
+        "https://loremflickr.com/800/600/bookshelf,modern/all?lock=222"
+      ],
       "wide": false
     },
     {
       "cat": "Comercial",
       "titulo": "Bar / local gastronómico — San Telmo",
       "year": "2023",
-      "foto": "https://loremflickr.com/800/600/bar,interior,wood/all?lock=23",
+      "descripcion": "Equipamiento completo de local gastronómico: barra principal, mesas, estantes y revestimiento de paredes en madera natural.",
+      "fotos": [
+        "https://loremflickr.com/800/600/bar,interior,wood/all?lock=23",
+        "https://loremflickr.com/800/600/restaurant,interior/all?lock=231",
+        "https://loremflickr.com/800/600/bar,modern/all?lock=232"
+      ],
       "wide": false
     },
     {
       "cat": "Dormitorio",
       "titulo": "Cabecera y mesas de luz — Caballito",
       "year": "2023",
-      "foto": "https://loremflickr.com/800/600/bedroom,furniture/all?lock=24",
+      "descripcion": "Cabecera tapizada con estructura de madera lacada y mesas de luz flotantes con cargador inalámbrico integrado.",
+      "fotos": [
+        "https://loremflickr.com/800/600/bedroom,furniture/all?lock=24",
+        "https://loremflickr.com/800/600/bedroom,modern/all?lock=241",
+        "https://loremflickr.com/800/600/bedroom,interior/all?lock=242"
+      ],
       "wide": false
     },
     {
       "cat": "Oficina",
       "titulo": "Estudio / home office — Villa Urquiza",
       "year": "2023",
-      "foto": "https://loremflickr.com/1200/675/office,furniture/all?lock=25",
+      "descripcion": "Home office completo con escritorio en L, biblioteca de pared y panel acústico. Diseñado para trabajo remoto con estética cuidada.",
+      "fotos": [
+        "https://loremflickr.com/1200/675/office,furniture/all?lock=25",
+        "https://loremflickr.com/1200/675/office,modern/all?lock=251",
+        "https://loremflickr.com/1200/675/desk,interior/all?lock=252"
+      ],
       "wide": true
     },
     {
-      "wide": false,
       "cat": "Biblioteca",
       "titulo": "Escritorio - estudio",
       "year": "2024",
-      "foto": "/uploads/traditional-wooden-steps-in-vintage-library-royalty-free-image-1666591817.avif"
+      "descripcion": "",
+      "fotos": [
+        "/uploads/traditional-wooden-steps-in-vintage-library-royalty-free-image-1666591817.avif"
+      ],
+      "wide": false
     }
   ]
 }
