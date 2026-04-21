@@ -1,0 +1,14 @@
+{
+  "nombre": "Detective",
+  "sub": "Carpintería",
+  "descripcion": "Carpintería a medida en Buenos Aires. Diseño preciso, materiales nobles y soluciones únicas para cada espacio.",
+  "telefono": "5491169343123",
+  "email": "hola@carpinteriadetective.com.ar",
+  "instagram": "carpinteriadetective",
+  "ciudad": "Buenos Aires, Argentina",
+  "socios": [
+    { "nombre": "Gonzalo", "rol": "Diseño y producción", "foto": "https://loremflickr.com/600/800/craftsman,woodwork/all?lock=10" },
+    { "nombre": "Lucas",   "rol": "Obra e instalación",  "foto": "https://loremflickr.com/600/800/carpenter,workshop/all?lock=11" },
+    { "nombre": "Martín",  "rol": "Presupuestos y clientes", "foto": "https://loremflickr.com/600/800/craftsman,tools/all?lock=12" }
+  ]
+}

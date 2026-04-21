@@ -1,0 +1,20 @@
+{
+  "items": [
+    {
+      "titulo": "Muebles a medida",
+      "desc": "Diseñamos y fabricamos cada pieza adaptada a tu espacio, estilo y necesidades. Desde un escritorio hasta un sistema de guardado completo."
+    },
+    {
+      "titulo": "Cocinas y vanitorios",
+      "desc": "Proyectos de cocinas funcionales y elegantes, con materiales de primera calidad y terminaciones impecables."
+    },
+    {
+      "titulo": "Revestimientos y placares",
+      "desc": "Frentes de placard, revestimientos de pared y soluciones de guardado que transforman cualquier ambiente."
+    },
+    {
+      "titulo": "Proyectos comerciales",
+      "desc": "Equipamos locales, estudios y oficinas con propuestas que combinan estética, durabilidad y practicidad."
+    }
+  ]
+}

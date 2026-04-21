@@ -1,50 +1,19 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import generalData   from '../data/general.json';
+import serviciosData from '../data/servicios.json';
+import proyectosData from '../data/proyectos.json';
+import testimoniosData from '../data/testimonios.json';
+import statsData     from '../data/stats.json';
 
-const servicios = [
-  {
-    num: '01',
-    titulo: 'Muebles a medida',
-    desc: 'Diseñamos y fabricamos cada pieza adaptada a tu espacio, estilo y necesidades. Desde un escritorio hasta un sistema de guardado completo.',
-  },
-  {
-    num: '02',
-    titulo: 'Cocinas y vanitorios',
-    desc: 'Proyectos de cocinas funcionales y elegantes, con materiales de primera calidad y terminaciones impecables.',
-  },
-  {
-    num: '03',
-    titulo: 'Revestimientos y placares',
-    desc: 'Frentes de placard, revestimientos de pared y soluciones de guardado que transforman cualquier ambiente.',
-  },
-  {
-    num: '04',
-    titulo: 'Proyectos comerciales',
-    desc: 'Equipamos locales, estudios y oficinas con propuestas que combinan estética, durabilidad y practicidad.',
-  },
-];
+const general     = generalData;
+const servicios   = serviciosData.items.map((s, i) => ({ ...s, num: String(i + 1).padStart(2, '0') }));
+const proyectos   = proyectosData.items;
+const testimonios = testimoniosData.items;
+const stats       = statsData.items;
 
-const proyectos = [
-  { cat: 'Cocina',     titulo: 'Cocina integral — Palermo',           year: '2024', flickr: 'kitchen,wood',        lock: 20, wide: true  },
-  { cat: 'Placard',   titulo: 'Sistema de guardado — Belgrano',       year: '2024', flickr: 'wardrobe,interior',   lock: 21, wide: false },
-  { cat: 'Living',    titulo: 'Biblioteca a medida — Núñez',          year: '2024', flickr: 'bookshelf,wood',      lock: 22, wide: false },
-  { cat: 'Comercial', titulo: 'Bar / local gastronómico — San Telmo', year: '2023', flickr: 'bar,interior,wood',   lock: 23, wide: false },
-  { cat: 'Dormitorio',titulo: 'Cabecera y mesas de luz — Caballito',  year: '2023', flickr: 'bedroom,furniture',   lock: 24, wide: false },
-  { cat: 'Oficina',   titulo: 'Estudio / home office — Villa Urquiza',year: '2023', flickr: 'office,furniture',    lock: 25, wide: true  },
-];
-
-const testimonios = [
-  {
-    texto: 'Trabajar con Detective fue muy distinto a lo que esperaba. Desde la primera reunión entendieron lo que quería, propusieron ideas que no había pensado, y el resultado superó todo. La cocina quedó impecable.',
-    nombre: 'Valentina R.',
-    lugar: 'Palermo, CABA',
-  },
-  {
-    texto: 'Buscaba algo simple y funcional para mi home office. Me armaron una propuesta en dos días y en tres semanas estaba todo instalado. Precisión total, sin sorpresas en el presupuesto.',
-    nombre: 'Matías G.',
-    lugar: 'Villa Urquiza, CABA',
-  },
-];
+const waLink = (text: string) =>
+  `https://wa.me/${general.telefono}?text=${encodeURIComponent(text)}`;
 ---
 
 <Layout>
@@ -52,9 +21,9 @@ const testimonios = [
   <!-- ── NAV ─────────────────────────────────────────── -->
   <header id="nav">
     <div class="container nav-inner">
-      <a href="/" class="logo" aria-label="Carpintería Detective">
-        <span class="logo-main">Detective</span>
-        <span class="logo-sub">Carpintería</span>
+      <a href="/" class="logo" aria-label={`${general.sub} ${general.nombre}`}>
+        <span class="logo-main">{general.nombre}</span>
+        <span class="logo-sub">{general.sub}</span>
       </a>
 
       <nav class="nav-links hide-sm" aria-label="Navegación principal">
@@ -65,7 +34,7 @@ const testimonios = [
       </nav>
 
       <a
-        href="https://wa.me/5491100000000?text=Hola%2C%20quiero%20hacer%20una%20consulta"
+        href={waLink('Hola, quiero hacer una consulta')}
         class="btn btn-dark hide-sm"
         target="_blank"
         rel="noopener noreferrer"
@@ -84,7 +53,7 @@ const testimonios = [
       <a href="#proyectos" class="mobile-link">Proyectos</a>
       <a href="#consulta" class="mobile-link">Contacto</a>
       <a
-        href="https://wa.me/5491100000000"
+        href={waLink('Hola, quiero hacer una consulta')}
         class="btn btn-filled"
         target="_blank"
         rel="noopener noreferrer"
@@ -105,7 +74,7 @@ const testimonios = [
         </p>
         <div class="hero-actions">
           <a
-            href="https://wa.me/5491100000000?text=Hola%2C%20quiero%20consultar%20sobre%20un%20proyecto"
+            href={waLink('Hola, quiero consultar sobre un proyecto')}
             class="btn btn-whatsapp"
             target="_blank"
             rel="noopener noreferrer"
@@ -152,33 +121,17 @@ const testimonios = [
       </div>
 
       <div class="about-partners">
-        <div class="partner-card">
-          <div class="img-block partner-img">
-            <img src="https://loremflickr.com/600/800/craftsman,woodwork/all?lock=10" alt="Gonzalo" />
+        {general.socios.map((s) => (
+          <div class="partner-card">
+            <div class="img-block partner-img">
+              <img src={s.foto} alt={s.nombre} />
+            </div>
+            <div class="partner-info">
+              <strong>{s.nombre}</strong>
+              <span>{s.rol}</span>
+            </div>
           </div>
-          <div class="partner-info">
-            <strong>Gonzalo</strong>
-            <span>Diseño y producción</span>
-          </div>
-        </div>
-        <div class="partner-card">
-          <div class="img-block partner-img">
-            <img src="https://loremflickr.com/600/800/carpenter,workshop/all?lock=11" alt="Lucas" />
-          </div>
-          <div class="partner-info">
-            <strong>Lucas</strong>
-            <span>Obra e instalación</span>
-          </div>
-        </div>
-        <div class="partner-card">
-          <div class="img-block partner-img">
-            <img src="https://loremflickr.com/600/800/craftsman,tools/all?lock=12" alt="Martín" />
-          </div>
-          <div class="partner-info">
-            <strong>Martín</strong>
-            <span>Presupuestos y clientes</span>
-          </div>
-        </div>
+        ))}
       </div>
     </div>
   </section>
@@ -214,10 +167,7 @@ const testimonios = [
         {proyectos.map((p) => (
           <article class="project-card" data-size={p.wide ? 'wide' : 'normal'}>
             <div class="img-block project-img">
-              <img
-                src={`https://loremflickr.com/${p.wide ? '1200/675' : '800/600'}/${p.flickr}/all?lock=${p.lock}`}
-                alt={p.titulo}
-              />
+              <img src={p.foto} alt={p.titulo} />
             </div>
             <div class="project-info">
               <span class="project-cat">{p.cat}</span>
@@ -233,22 +183,12 @@ const testimonios = [
   <!-- ── STATS ────────────────────────────────────────── -->
   <section class="stats-section">
     <div class="container stats-grid">
-      <div class="stat">
-        <span class="stat-num">+60</span>
-        <span class="stat-label">Proyectos realizados</span>
-      </div>
-      <div class="stat">
-        <span class="stat-num">3</span>
-        <span class="stat-label">Años de trayectoria</span>
-      </div>
-      <div class="stat">
-        <span class="stat-num">100%</span>
-        <span class="stat-label">Entrega a tiempo</span>
-      </div>
-      <div class="stat">
-        <span class="stat-num">CABA</span>
-        <span class="stat-label">y Gran Buenos Aires</span>
-      </div>
+      {stats.map((s) => (
+        <div class="stat">
+          <span class="stat-num">{s.num}</span>
+          <span class="stat-label">{s.label}</span>
+        </div>
+      ))}
     </div>
   </section>
 
@@ -285,19 +225,19 @@ const testimonios = [
         <ul class="contact-list">
           <li>
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 01.1 1.17a2 2 0 011.99-2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 8.37a16 16 0 006.72 6.72l1.27-.38a2 2 0 012.11.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
-            <a href="tel:+5491100000000">+54 9 11 0000-0000</a>
+            <a href={`tel:+${general.telefono}`}>+{general.telefono}</a>
           </li>
           <li>
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-            <a href="mailto:hola@carpinteriadetective.com.ar">hola@carpinteriadetective.com.ar</a>
+            <a href={`mailto:${general.email}`}>{general.email}</a>
           </li>
           <li>
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
-            <span>Buenos Aires, Argentina</span>
+            <span>{general.ciudad}</span>
           </li>
           <li>
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
-            <a href="https://instagram.com/carpinteriadetective" target="_blank" rel="noopener noreferrer">@carpinteriadetective</a>
+            <a href={`https://instagram.com/${general.instagram}`} target="_blank" rel="noopener noreferrer">@{general.instagram}</a>
           </li>
         </ul>
       </div>
@@ -359,8 +299,8 @@ const testimonios = [
   <footer class="footer">
     <div class="container footer-inner">
       <div class="footer-brand">
-        <span class="logo-main">Detective</span>
-        <span class="logo-sub">Carpintería</span>
+        <span class="logo-main">{general.nombre}</span>
+        <span class="logo-sub">{general.sub}</span>
         <p style="margin-top:1rem;font-size:0.85rem;">Muebles a medida en Buenos Aires.<br />Diseño, precisión, detalle.</p>
       </div>
 
@@ -372,9 +312,9 @@ const testimonios = [
       </nav>
 
       <div class="footer-contact">
-        <a href="tel:+5491100000000">+54 9 11 0000-0000</a>
-        <a href="mailto:hola@carpinteriadetective.com.ar">hola@carpinteriadetective.com.ar</a>
-        <a href="https://instagram.com/carpinteriadetective" target="_blank" rel="noopener noreferrer">Instagram</a>
+        <a href={`tel:+${general.telefono}`}>+{general.telefono}</a>
+        <a href={`mailto:${general.email}`}>{general.email}</a>
+        <a href={`https://instagram.com/${general.instagram}`} target="_blank" rel="noopener noreferrer">Instagram</a>
       </div>
     </div>
     <div class="footer-bottom">

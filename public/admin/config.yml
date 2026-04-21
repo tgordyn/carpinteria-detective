@@ -1,0 +1,85 @@
+backend:
+  name: git-gateway
+  branch: master
+
+media_folder: public/uploads
+public_folder: /uploads
+
+locale: es
+
+collections:
+  - name: "configuracion"
+    label: "Configuración"
+    files:
+
+      - name: "general"
+        label: "Información general"
+        file: "src/data/general.json"
+        format: json
+        fields:
+          - { label: "Nombre principal (ej: Detective)", name: "nombre", widget: "string" }
+          - { label: "Subtítulo (ej: Carpintería)", name: "sub", widget: "string" }
+          - { label: "Descripción SEO", name: "descripcion", widget: "text" }
+          - { label: "Número WhatsApp (sin + ni espacios)", name: "telefono", widget: "string", hint: "Ej: 5491169343123" }
+          - { label: "Email de contacto", name: "email", widget: "string" }
+          - { label: "Usuario Instagram (sin @)", name: "instagram", widget: "string" }
+          - { label: "Ciudad", name: "ciudad", widget: "string" }
+          - label: "Socios"
+            name: "socios"
+            widget: "list"
+            fields:
+              - { label: "Nombre", name: "nombre", widget: "string" }
+              - { label: "Rol", name: "rol", widget: "string" }
+              - { label: "Foto", name: "foto", widget: "image" }
+
+      - name: "servicios"
+        label: "Servicios"
+        file: "src/data/servicios.json"
+        format: json
+        fields:
+          - label: "Servicios"
+            name: "items"
+            widget: "list"
+            fields:
+              - { label: "Título", name: "titulo", widget: "string" }
+              - { label: "Descripción", name: "desc", widget: "text" }
+
+      - name: "proyectos"
+        label: "Proyectos"
+        file: "src/data/proyectos.json"
+        format: json
+        fields:
+          - label: "Proyectos"
+            name: "items"
+            widget: "list"
+            fields:
+              - { label: "Categoría (ej: Cocina)", name: "cat", widget: "string" }
+              - { label: "Título", name: "titulo", widget: "string" }
+              - { label: "Año", name: "year", widget: "string" }
+              - { label: "Foto", name: "foto", widget: "image" }
+              - { label: "Ancho completo (ocupa 2 columnas)", name: "wide", widget: "boolean", default: false }
+
+      - name: "testimonios"
+        label: "Testimonios"
+        file: "src/data/testimonios.json"
+        format: json
+        fields:
+          - label: "Testimonios"
+            name: "items"
+            widget: "list"
+            fields:
+              - { label: "Texto", name: "texto", widget: "text" }
+              - { label: "Nombre del cliente", name: "nombre", widget: "string" }
+              - { label: "Barrio / ciudad", name: "lugar", widget: "string" }
+
+      - name: "stats"
+        label: "Estadísticas (números destacados)"
+        file: "src/data/stats.json"
+        format: json
+        fields:
+          - label: "Stats"
+            name: "items"
+            widget: "list"
+            fields:
+              - { label: "Número (ej: +60)", name: "num", widget: "string" }
+              - { label: "Descripción", name: "label", widget: "string" }

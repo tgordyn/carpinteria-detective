@@ -19,6 +19,7 @@ const {
   <meta property="og:description" content={description} />
   <meta property="og:type" content="website" />
   <meta property="og:locale" content="es_AR" />
+  <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
@@ -180,7 +181,7 @@ const {
   <slot />
 
   <a
-    href="https://wa.me/5491100000000?text=Hola%2C%20quiero%20consultar%20sobre%20un%20proyecto%20de%20carpinter%C3%ADa"
+    href="https://wa.me/5491169343123?text=Hola%2C%20quiero%20consultar%20sobre%20un%20proyecto%20de%20carpinter%C3%ADa"
     class="whatsapp-float"
     target="_blank"
     rel="noopener noreferrer"
@@ -213,5 +214,16 @@ const {
       box-shadow: 0 6px 28px rgba(0,0,0,0.2);
     }
   </style>
+  <script>
+    if (window.netlifyIdentity) {
+      window.netlifyIdentity.on('init', (user: unknown) => {
+        if (!user) {
+          window.netlifyIdentity.on('login', () => {
+            document.location.href = '/admin/';
+          });
+        }
+      });
+    }
+  </script>
 </body>
 </html>
