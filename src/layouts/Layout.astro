@@ -224,6 +224,10 @@ const {
           });
         }
       });
+      const hash = window.location.hash;
+      if (hash.includes('invite_token') || hash.includes('recovery_token') || hash.includes('confirmation_token')) {
+        window.netlifyIdentity.open();
+      }
     }
   </script>
 </body>
