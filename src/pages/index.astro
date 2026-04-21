@@ -333,10 +333,12 @@ const waLink = (text: string) =>
     top: 0;
     left: 0;
     right: 0;
+    width: 100%;
     z-index: 100;
     background: var(--bg);
     border-bottom: 1px solid transparent;
     transition: border-color 0.3s ease, background 0.3s ease;
+    overflow: visible;
   }
   #nav.scrolled {
     border-bottom-color: var(--border);
@@ -397,15 +399,19 @@ const waLink = (text: string) =>
     background: var(--dark);
     transition: all 0.2s;
   }
-  @media (max-width: 640px) {
+  @media (max-width: 768px) {
     .menu-btn { display: flex; }
+    .nav-links { display: none; }
+    .btn.hide-sm { display: none; }
   }
   .mobile-menu {
     display: none;
     flex-direction: column;
+    width: 100%;
     padding: 1.5rem clamp(1.5rem, 5vw, 3.5rem) 2rem;
     border-top: 1px solid var(--border);
     background: var(--bg);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.08);
   }
   .mobile-menu.open { display: flex; }
   .mobile-link {
