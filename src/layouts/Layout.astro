@@ -215,18 +215,14 @@ const {
       box-shadow: 0 6px 28px rgba(0,0,0,0.2);
     }
   </style>
-  <script>
+  <script is:inline>
+    const hash = window.location.hash;
+    if (hash.includes('invite_token') || hash.includes('recovery_token') || hash.includes('confirmation_token')) {
+      window.location.href = '/admin/' + hash;
+    }
     if (window.netlifyIdentity) {
-      window.netlifyIdentity.on('init', (user: unknown) => {
-        const hash = window.location.hash;
-        if (hash.includes('invite_token') || hash.includes('recovery_token') || hash.includes('confirmation_token')) {
-          window.netlifyIdentity.open();
-        }
-        if (!user) {
-          window.netlifyIdentity.on('login', () => {
-            document.location.href = '/admin/';
-          });
-        }
+      window.netlifyIdentity.on('login', function() {
+        document.location.href = '/admin/';
       });
     }
   </script>
