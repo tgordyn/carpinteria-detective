@@ -1,11 +1,11 @@
 {
-  "nombre": "Detective",
-  "sub": "Carpintería",
-  "descripcion": "Carpintería a medida en Buenos Aires. Diseño preciso, materiales nobles y soluciones únicas para cada espacio.",
-  "telefono": "5491169343123",
-  "email": "hola@carpinteriadetective.com.ar",
-  "instagram": "carpinteriadetective",
-  "ciudad": "Buenos Aires, Argentina",
+  "nombre": "Amalgama",
+  "sub": "Muebles a medida",
+  "descripcion": "Muebles a medida en Vicente López. Diseño preciso, materiales nobles y soluciones únicas para cada espacio.",
+  "telefono": "5491172362854",
+  "email": "amalgamadesings@gmail.com",
+  "instagram": "amalgama.designs",
+  "ciudad": "Vicente López, Buenos Aires",
   "socios": [
     { "nombre": "Gonzalo", "rol": "Diseño y producción", "foto": "https://loremflickr.com/600/800/craftsman,woodwork/all?lock=10" },
     { "nombre": "Lucas",   "rol": "Obra e instalación",  "foto": "https://loremflickr.com/600/800/carpenter,workshop/all?lock=11" },

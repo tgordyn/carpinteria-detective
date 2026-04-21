@@ -22,8 +22,11 @@ const waLink = (text: string) =>
   <header id="nav">
     <div class="container nav-inner">
       <a href="/" class="logo" aria-label={`${general.sub} ${general.nombre}`}>
-        <span class="logo-main">{general.nombre}</span>
-        <span class="logo-sub">{general.sub}</span>
+        <img src="/logo_circular.png" alt="Logo Amalgama" class="logo-img" />
+        <div class="logo-text">
+          <span class="logo-main">{general.nombre}</span>
+          <span class="logo-sub">{general.sub}</span>
+        </div>
       </a>
 
       <nav class="nav-links hide-sm" aria-label="Navegación principal">
@@ -66,10 +69,10 @@ const waLink = (text: string) =>
   <section id="inicio" class="hero">
     <div class="container hero-inner">
       <div class="hero-content">
-        <span class="label">Carpintería a medida · Buenos Aires</span>
+        <span class="label">Muebles a medida · Vicente López</span>
         <h1>Cada espacio<br /><em>tiene una historia.</em><br />Nosotros<br />la construimos.</h1>
         <p class="hero-sub">
-          Muebles, cocinas y proyectos de carpintería diseñados con precisión,
+          Muebles, cocinas y proyectos diseñados con precisión,
           fabricados con materiales nobles, instalados con detalle.
         </p>
         <div class="hero-actions">
@@ -319,7 +322,7 @@ const waLink = (text: string) =>
     </div>
     <div class="footer-bottom">
       <div class="container">
-        <span>© 2025 Carpintería Detective. Buenos Aires, Argentina.</span>
+        <span>© 2025 Amalgama Design. Vicente López, Buenos Aires.</span>
       </div>
     </div>
   </footer>
@@ -354,15 +357,26 @@ const waLink = (text: string) =>
   }
   .logo {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    align-items: center;
+    gap: 0.6rem;
     line-height: 1;
+  }
+  .logo-img {
+    height: 36px;
+    width: auto;
+    display: block;
+    object-fit: contain;
+  }
+  .logo-text {
+    display: flex;
+    flex-direction: column;
     gap: 1px;
   }
   .logo-main {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 1.5rem;
+    font-family: 'Sacramento', cursive;
+    font-size: 2rem;
     font-weight: 400;
-    letter-spacing: -0.03em;
     color: var(--dark);
   }
   .logo-sub {
@@ -745,8 +759,8 @@ const waLink = (text: string) =>
     padding-bottom: clamp(3rem, 6vw, 5rem);
     border-bottom: 1px solid rgba(255,255,255,0.08);
   }
-  .footer-brand .logo-main { color: white; font-size: 2rem; }
-  .footer-brand .logo-sub { color: var(--accent); }
+  .footer-brand .logo-main { color: white; font-size: 2rem; display: block; }
+  .footer-brand .logo-sub { color: var(--accent); display: block; }
   .footer-brand p { color: rgba(255,255,255,0.4); }
   .footer-nav, .footer-contact {
     display: flex;
