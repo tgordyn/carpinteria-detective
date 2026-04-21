@@ -1,10 +1,53 @@
 {
   "items": [
-    { "cat": "Cocina",      "titulo": "Cocina integral — Palermo",            "year": "2024", "foto": "https://loremflickr.com/1200/675/kitchen,wood/all?lock=20",     "wide": true  },
-    { "cat": "Placard",    "titulo": "Sistema de guardado — Belgrano",        "year": "2024", "foto": "https://loremflickr.com/800/600/wardrobe,interior/all?lock=21",  "wide": false },
-    { "cat": "Living",     "titulo": "Biblioteca a medida — Núñez",           "year": "2024", "foto": "https://loremflickr.com/800/600/bookshelf,wood/all?lock=22",     "wide": false },
-    { "cat": "Comercial",  "titulo": "Bar / local gastronómico — San Telmo",  "year": "2023", "foto": "https://loremflickr.com/800/600/bar,interior,wood/all?lock=23",  "wide": false },
-    { "cat": "Dormitorio", "titulo": "Cabecera y mesas de luz — Caballito",   "year": "2023", "foto": "https://loremflickr.com/800/600/bedroom,furniture/all?lock=24",  "wide": false },
-    { "cat": "Oficina",    "titulo": "Estudio / home office — Villa Urquiza", "year": "2023", "foto": "https://loremflickr.com/1200/675/office,furniture/all?lock=25",  "wide": true  }
+    {
+      "cat": "Cocina",
+      "titulo": "Cocina integral — Palermo",
+      "year": "2024",
+      "foto": "https://loremflickr.com/1200/675/kitchen,wood/all?lock=20",
+      "wide": true
+    },
+    {
+      "cat": "Placard",
+      "titulo": "Sistema de guardado — Belgrano",
+      "year": "2024",
+      "foto": "https://loremflickr.com/800/600/wardrobe,interior/all?lock=21",
+      "wide": false
+    },
+    {
+      "cat": "Living",
+      "titulo": "Biblioteca a medida — Núñez",
+      "year": "2024",
+      "foto": "https://loremflickr.com/800/600/bookshelf,wood/all?lock=22",
+      "wide": false
+    },
+    {
+      "cat": "Comercial",
+      "titulo": "Bar / local gastronómico — San Telmo",
+      "year": "2023",
+      "foto": "https://loremflickr.com/800/600/bar,interior,wood/all?lock=23",
+      "wide": false
+    },
+    {
+      "cat": "Dormitorio",
+      "titulo": "Cabecera y mesas de luz — Caballito",
+      "year": "2023",
+      "foto": "https://loremflickr.com/800/600/bedroom,furniture/all?lock=24",
+      "wide": false
+    },
+    {
+      "cat": "Oficina",
+      "titulo": "Estudio / home office — Villa Urquiza",
+      "year": "2023",
+      "foto": "https://loremflickr.com/1200/675/office,furniture/all?lock=25",
+      "wide": true
+    },
+    {
+      "wide": false,
+      "cat": "Biblioteca",
+      "titulo": "Escritorio - estudio",
+      "year": "2024",
+      "foto": "/uploads/traditional-wooden-steps-in-vintage-library-royalty-free-image-1666591817.avif"
+    }
   ]
 }
